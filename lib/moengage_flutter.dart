@@ -64,7 +64,7 @@ class MoEngageFlutter {
 
   void setCustomActionHandler(InAppCallbackHandler customHandler) {
     onAction = customHandler;
-    print('k 1 ${customHandler} ${count}');
+    print('k 1 ${customHandler} ');
   }
 
   void setUpPushTokenCallback(PushTokenCallbackHandler onPushTokenGenerated) {
@@ -76,7 +76,7 @@ class MoEngageFlutter {
     print(
         'MOE ${call.method} ${_onInAppSelfHandle} ${_onInAppCustomAction} ${_onInAppDismiss} ${_onInAppShown}');
     if (call.method == 'onInAppCustomAction') {
-      print('K 2 ${call.arguments} ${onAction} ${count}');
+      print('K 2 ${call.arguments} ${onAction} ');
       InAppCampaign? inAppCampaign = inAppCampaignFromJson(call.arguments);
 
       onAction?.call(inAppCampaign);
